@@ -28,8 +28,8 @@ $borderWidth: 1px !default;
 
 $arrowHeight: 4px !default;
 $arrowWidth: 6px !default;
-$triangleBorder: 3px !default;
-$arrowPadding: 4px !default;
+$triangleBorder: 4px !default;
+$arrowPadding: 12px !default;
 $arrowColor: #555 !default;
 
 $inputPadding: 6px !default;
@@ -79,10 +79,10 @@ $flagsImageExtension: "png" !default;
     // make space for the selected flag
     // Note: no !important here, as the user may want to tweak this so that the
     // perceived input padding matches their existing styles
-    padding-left: $selectedFlagWidth + $inputPadding;
+    padding-left: 10px;
 
     // any margin-left here will push the selected-flag away
-    margin-left: 0;
+    margin-left: 20%;
 
     // when user presses invalid key, we add a class which instantly adds a bg color,
     // then when we remove that class, this does a quick fade back to no bg
@@ -101,8 +101,12 @@ $flagsImageExtension: "png" !default;
     // full height
     top: 0;
     bottom: 0;
-    // prevent the highlighted child from overlapping the input border
-    padding: $borderWidth;
+    //force width
+    width: 18%;
+    min-width: 3rem;
+    max-width: 4rem;
+    //add border
+    border: 1px solid $greyBorder;
   }
   // hover state - show flag is clickable
   .flag-container:hover {
@@ -123,7 +127,6 @@ $flagsImageExtension: "png" !default;
     // render above the input
     z-index: 1;
     position: relative;
-    width: $selectedFlagWidth;
     // this must be full-height both for the hover highlight, and to push down the
     // dropdown so it appears below the input
     height: 100%;
